@@ -1,0 +1,335 @@
+.contact-section {
+    padding: 5rem 2rem;
+    background: rgba(10, 25, 47, 0.9);
+    position: relative;
+    overflow: visible;
+}
+
+/* Star background container */
+.stars-container,
+.shooting-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Static stars */
+.star {
+    position: absolute;
+    background-color: var(--star-color);
+    border-radius: 50%;
+    animation: twinkle infinite ease-in-out;
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Shooting stars */
+.shooting-star {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8));
+    transform: rotate(-45deg);
+    animation: shootingStar linear infinite;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8));
+}
+
+@keyframes shootingStar {
+    0% {
+        transform: rotate(-45deg) translateX(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotate(-45deg) translateX(1000px);
+        opacity: 0;
+    }
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-decoration {
+    z-index: 1;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-title {
+    margin-top: 3rem;
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-clip: text;
+    color: #e6f1ff;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--accent-teal);
+    line-height: 1.6;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group.floating {
+    position: relative;
+    padding-top: 1.5rem;
+}
+
+.form-group.floating label {
+    position: absolute;
+    top: 2.8rem;
+    left: 2.5rem;
+    color: var(--text-muted);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.form-group.floating .input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 3rem;
+    color: var(--accent-teal);
+    transition: all 0.3s ease;
+}
+
+.form-group.floating input,
+.form-group.floating textarea {
+    width: 100%;
+    padding: 1.5rem 1rem 1rem 2.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    border-bottom: 1px solid var(--glass-border);
+    color: var(--text-light);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border-radius: 0;
+}
+
+.form-group.floating textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-group.floating input:focus,
+.form-group.floating textarea:focus,
+.form-group.floating input:not(:placeholder-shown),
+.form-group.floating textarea:not(:placeholder-shown) {
+    outline: none;
+    border-bottom-color: var(--accent-teal);
+}
+
+.form-group.floating input:focus~label,
+.form-group.floating textarea:focus~label,
+.form-group.floating input:not(:placeholder-shown)~label,
+.form-group.floating textarea:not(:placeholder-shown)~label {
+    top: 0.5rem;
+    left: 2.5rem;
+    font-size: 0.8rem;
+    color: var(--accent-teal);
+}
+
+.form-group.floating input:focus~.input-icon,
+.form-group.floating textarea:focus~.input-icon,
+.form-group.floating input:not(:placeholder-shown)~.input-icon,
+.form-group.floating textarea:not(:placeholder-shown)~.input-icon {
+    color: var(--accent-teal);
+    transform: scale(1.1);
+}
+
+.underline-animation {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-teal);
+    transition: width 0.3s ease;
+}
+
+.form-group.floating input:focus~.underline-animation,
+.form-group.floating textarea:focus~.underline-animation {
+    width: 100%;
+}
+
+.submit-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(90deg, var(--accent-orange), var(--accent-purple));
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    box-shadow: 0 4px 15px rgba(123, 77, 255, 0.3);
+}
+
+.submit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(123, 77, 255, 0.5);
+}
+
+.submit-button .send-icon {
+    transition: transform 0.3s ease;
+}
+
+.submit-button:hover .send-icon {
+    transform: translateX(5px);
+}
+
+/* Decorative Elements */
+.contact-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.decoration-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.2;
+}
+
+.circle-1 {
+    width: 200px;
+    height: 200px;
+    background: var(--accent-purple);
+    top: -50px;
+    right: -50px;
+}
+
+.circle-2 {
+    width: 150px;
+    height: 150px;
+    background: var(--accent-teal);
+    bottom: -30px;
+    left: -30px;
+}
+
+.circle-3 {
+    width: 100px;
+    height: 100px;
+    background: var(--accent-orange);
+    top: 50%;
+    left: 30%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .contact-title {
+        font-size: 2rem;
+    }
+
+    .contact-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .form-group.floating label {
+        left: 2.2rem;
+    }
+
+    .form-group.floating input,
+    .form-group.floating textarea {
+        width: 100%;
+        padding-left: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section {
+        padding: 2rem 1rem;
+    }
+
+    .contact-title {
+        font-size: 1.8rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .form-group.floating label {
+        font-size: 0.9rem;
+        left: 2rem;
+    }
+
+    .form-group.floating input,
+    .form-group.floating textarea {
+        width: 100%;
+        padding-left: 2rem;
+        font-size: 0.9rem;
+    }
+
+    .submit-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}

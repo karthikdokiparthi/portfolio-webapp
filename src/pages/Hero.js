@@ -14,15 +14,6 @@ const Hero = () => {
         delay: Math.random() * 3
     }));
 
-    // Generate random buildings
-    const buildings = Array.from({ length: 30 }).map((_, i) => ({
-        id: i,
-        height: 20 + Math.random() * 50,
-        width: 2 + Math.random() * 4,
-        marginLeft: Math.random() * 3,
-        delay: i * 0.05
-    }));
-
     useEffect(() => {
         // Show Spider-Man for 3 seconds
         const spiderTimer = setTimeout(() => {
