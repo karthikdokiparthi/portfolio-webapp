@@ -69,13 +69,13 @@ const Navbar = () => {
                     <ul>
                         {navLinks.map((link) => (
                             <li key={link.id}>
-                                <a
+                                <button
                                     className={activeSection === link.id ? 'active' : ''}
                                     onClick={() => scrollToSection(link.id)}
                                 >
                                     {link.text}
                                     <span className="nav-indicator"></span>
-                                </a>
+                                </button>
                             </li>
                         ))}
                     </ul>
@@ -114,12 +114,12 @@ const Navbar = () => {
                     <ul>
                         {navLinks.map((link) => (
                             <li key={link.id}>
-                                <a
+                                <button
                                     className={activeSection === link.id ? 'active' : ''}
                                     onClick={() => scrollToSection(link.id)}
                                 >
                                     {link.text}
-                                </a>
+                                </button>
                             </li>
                         ))}
                         <li>
