@@ -442,4 +442,18 @@
     .title-header {
         font-size: 1.8rem;
     }
+
+    .strange-center {
+        width: 150px;
+        height: 150px;
+    }
+
+    .skill-orb:hover {
+        transform:
+            rotate(var(--angle)) translate(150px) rotate(var(--rotation)) scale(1.2);
+        box-shadow:
+            0 0 25px rgba(192, 160, 98, 0.8),
+            0 0 40px rgba(106, 90, 205, 0.5);
+        z-index: 1;
+    }
 }
