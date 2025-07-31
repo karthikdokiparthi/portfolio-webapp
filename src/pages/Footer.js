@@ -1,6 +1,6 @@
 import React from 'react';
 import { FiMail, FiPhone } from 'react-icons/fi';
-import ToolTip from '../components/ToolTip';
+import ToolTip from '../Components/ToolTip';
 import './Footer.css';
 
 function Footer() {
