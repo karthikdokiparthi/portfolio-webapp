@@ -1,5 +1,6 @@
 import React from 'react';
 import { FiMail, FiPhone } from 'react-icons/fi';
+import { LuContactRound } from "react-icons/lu";
 import ToolTip from '../Components/ToolTip';
 import './Footer.css';
 
@@ -19,7 +20,7 @@ function Footer() {
 
                     <div className="footer-contact">
                         <h4 className="footer-heading">
-                            <FiMail className="footer-icon" />
+                            <LuContactRound className="footer-icon" />
                             Contact Me
                         </h4>
                         <ul className="contact-info">
