@@ -3,6 +3,8 @@ import './App.css';
 import Navbar from './Components/Navbar';
 import Hero from './pages/Hero';
 import AboutMe from './pages/AboutMe';
+import Skills from './pages/Skills';
+import Projects from './pages/Projects';
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
       <main>
         <Hero />
         <AboutMe />
+        <Skills />
+        <Projects />
       </main>
     </>
   );
