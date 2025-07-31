@@ -1,16 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import './Hero.css';
-import StarsBackground from './StarsBackground';
 
 const Hero = () => {
     const [showSpiderMan, setShowSpiderMan] = useState(true);
     const [showText, setShowText] = useState(false);
 
+    // Generate random stars
+    const stars = Array.from({ length: 150 }).map((_, i) => ({
+        id: i,
+        top: Math.random() * 100,
+        left: Math.random() * 100,
+        size: 1 + Math.random() * 2,
+        delay: Math.random() * 3
+    }));
+
+    // Generate random buildings
+    const buildings = Array.from({ length: 30 }).map((_, i) => ({
+        id: i,
+        height: 20 + Math.random() * 50,
+        width: 2 + Math.random() * 4,
+        marginLeft: Math.random() * 3,
+        delay: i * 0.05
+    }));
+
     useEffect(() => {
+        // Show Spider-Man for 3 seconds
         const spiderTimer = setTimeout(() => {
             setShowSpiderMan(false);
         }, 3200);
 
+        // Show text after Spider-Man disappears
         const textTimer = setTimeout(() => {
             setShowText(true);
         }, 3300);
@@ -23,7 +42,22 @@ const Hero = () => {
 
     return (
         <section id="home" className="hero-container">
-            <StarsBackground count={150} />
+            {/* Sky with stars */}
+            <div className="sky">
+                {stars.map(star => (
+                    <div
+                        key={star.id}
+                        className="star"
+                        style={{
+                            top: `${star.top}%`,
+                            left: `${star.left}%`,
+                            width: `${star.size}px`,
+                            height: `${star.size}px`,
+                            animationDelay: `${star.delay}s`
+                        }}
+                    />
+                ))}
+            </div>
 
             {/* Spider-Man animation */}
             {showSpiderMan && (
